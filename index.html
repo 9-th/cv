@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Основная подложка -->
+        <div id="main-content" class="editor">
+            <!-- Панель инструментов -->
+            <div class="toolbar">
+                <span class="btn red"></span>
+                <span class="btn yellow"></span>
+                <span class="btn green"></span>
+                <span class="title">QaEngineer_cv</span>
+            </div>
+            
+            <!-- Кнопки меню -->
+            <div class="menu">
+                <button class="menu-btn active" data-target="home-section">Home</button>
+                <button class="menu-btn" data-target="experience-section">Experience</button>
+                <button class="menu-btn" data-target="projects-section">Skills</button>
+                <button class="menu-btn" data-target="contact-section">Contact</button>
+            </div>
+
+            <!-- Секции с кодом -->
+            <div id="home-section" class="code-section active">
+                <!-- Картинка перед секцией с кодом -->
+                <div class="profile-container">
+                    <img src="avatar.png" alt="Profile Photo" class="profile-photo">
+                </div>
+                <pre class="code">
+    function <span class="function">intro</span>() {
+        console.<span class="method">log</span>("<span class="value">Меня зовут Александр, я квалифицированный QA Engineer с более чем 3-летним опытом работы в сфере тестирования программного обеспечения. Я специализируюсь на ручном тестировании веб- и мобильных приложений, уделяя особое внимание качеству, производительности и пользовательскому опыту. Благодаря опыту работы в команде и глубокому пониманию процесса разработки программного обеспечения, я участвовал на всех этапах цикла разработки: от составления тест-кейсов до финального релиза продукта. Моя цель – обеспечить надежность и стабильность продукта, своевременно находя и устраняя баги, чтобы конечный пользователь получал наилучший опыт взаимодействия с продуктом. 
+        
+        Я стремлюсь к постоянному развитию и улучшению своих навыков, следуя новым тенденциям в области тестирования и совершенствуя подходы к работе. Я уверен, что качественное тестирование – это залог успешного продукта, и моя главная цель – обеспечить пользователям максимально стабильный и удобный в использовании софт. В своей работе я ценю внимание к деталям, упорство и способность видеть продукт глазами конечного пользователя, что помогает мне находить даже самые скрытые баги.</span>");
+    }
+
+    QaEngineer();
+                </pre>
+            </div>
+
+            <div id="experience-section" class="code-section">
+                <pre class="code">
+    function <span class="function">webDeveloper</span>() {
+        <span class="var">var</span> name    = "<span id="name" class="value"></span>";
+        <span class="var">var</span> phone   = "<span id="phone" class="value"></span>";
+        <span class="var">var</span> website = "<span id="website" class="value"></span>";
+        <span class="var">var</span> mail    = "<span id="mail" class="value"></span>";
+    }
+                </pre>
+            </div>
+
+            <div id="projects-section" class="code-section">
+                <pre class="code">
+    <span class="keyword">function</span> <span class="function-name">qaEngineerSkills</span>() {
+        <span class="keyword">const</span> webTesting = {
+            tools: ["Devtools", "Proxyman", "PixelPerfect"],
+            description: <span class="string">"Тестирование веб-приложений"</span>
+        },
+    };
+    <span class="keyword">const</span> mobileTesting = {
+        platforms: {
+            iOS: <span class="string">"Xcode"</span>,
+            Android: <span class="string">"Android Studio"</span>
+        },
+            description: <span class="string">"Тестирование мобильных приложений"</span>
+    };
+    <span class="keyword">const</span> backendTesting = {
+        tools: ["Postman", "Swagger"],
+        description: <span class="string">"Тестирование бэкенда"</span>
+    };
+    <span class="keyword">const</span> database = {
+        system: <span class="string">"PostgreSQL"</span>,
+        description: <span class="string">"Работа с базами данных"</span>
+    };
+    <span class="keyword">const</span> logsAndTraffic = {
+        tools: ["Kibana", "Sentry", "Grafana", "Charles"],
+        description: <span class="string">"Анализ логов и трафика"</span>
+    };
+    <span class="keyword">const</span> taskManagement = {
+        tools: ["Jira", "Allure TestOps", "Confluence", "Miro"],
+        description: <span class="string">"Управление задачами и тест-кейсами"</span>
+    };
+    <span class="keyword">const</span> workflow = {
+        methodology: <span class="string">"Agile"</span>,
+        testingTypes: ["Регрессионное тестирование", "Смоук-тестирование"],
+        collaboration: <span class="string">"Взаимодействие с командой разработчиков, аналитиков и проджект-менеджеров"</span>
+    };
+    <span class="keyword">return</span> { webTesting, mobileTesting, backendTesting, database, logsAndTraffic, taskManagement, workflow };
+
+                </pre>
+                
+            </div>
+
+            <div id="contact-section" class="code-section">
+                <pre class="code">
+    <span class="function">phoneInfo</span>() {
+        <span class="var">var</span> phone = {
+            <span class="key">number</span>: "<span id="phone" class="value"><a href="tel:+79999999999">+7(999)999 99-99</a></span>",
+            <span class="key">action</span>: "<button class="button" id="call-button">Позвонить</button>"
+        };
+    }
+    <span class="function">emailInfo</span>() {
+        <span class="var">var</span> email = {
+            <span class="key">address</span>: "<span id="email" class="value">aleksandr.kozelskii@yandex.ru</span>",
+            <span class="key">action</span>: "<button class="button" onclick="window.location.href='mailto:aleksandr.kozelskii@yandex.ru'">Написать мне</button>"
+        };
+    }
+    <span class="function">githubInfo</span>() {
+        <span class="var">var</span> github = {
+            <span class="key">profile</span>: "<a href="https://github.com/9-th" class="value" target="_blank">9-th</a>",
+            <span class="key">action</span>: "<button class="button" onclick="window.open('https://github.com/9-th', '_blank')">Перейти на GitHub</button>"
+        };
+    }
+    <span class="function">telegramInfo</span>() {
+        <span class="var">var</span> telegram = {
+            <span class="key">profile</span>: "<a href="https://t.me/your_username" class="value" target="_blank">@lkSaNDrl</a>",
+            <span class="key">action</span>: "<button class="button" onclick="window.open('https://t.me/lkSaNDrl', '_blank')">Написать в Telegram</button>"
+        };
+    }
+    <span class="function">addressInfo</span>() {
+        <span class="var">var</span> address = {
+            <span class="key">location</span>: "<span id="address" class="value">Россия г. Москва</span>",
+            <span class="key">action</span>: "<button class="button" id="map-button">Открыть Яндекс.Карты</button>"
+        };
+    }
+    <span class="function">hoursInfo</span>() {
+        <span class="var">var</span> hours = {
+            <span class="key">workingHours</span>: "<span id="hours" class="value">Mo-Fr, 9:00AM - 06:00PM</span>",
+            <span class="key">action</span>: "<button class="button" onclick='checkTimeZone()'>Проверить время для звонка</button>"
+        };
+    }
+                </pre>
+            </div>
+        </div>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <!-- Панель инструментов в модальном окне -->
+                <div class="toolbar">
+                    <span class="btn red"></span>
+                    <span class="btn yellow"></span>
+                    <span class="btn green"></span>
+                    <span class="title">TimeClient_info</span>
+                </div>
+                <!-- Содержимое модального окна -->
+                <div id="modal-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

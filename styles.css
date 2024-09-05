@@ -1,0 +1,372 @@
+/* Для небольших экранов (мобильные устройства) */
+@media (max-width: 600px) {
+    .editor {
+        max-width: 100%; /* Заполняем весь экран */
+        padding: 10px;   /* Уменьшаем внутренние отступы */
+    }
+
+    .menu {
+        flex-direction: column; /* Кнопки меню в столбик */
+        gap: 5px;
+    }
+
+    .profile-photo {
+        width: 80px; /* Уменьшаем фото для мобильных устройств */
+        height: 80px;
+    }
+
+    .button {
+        font-size: 12px; /* Уменьшаем размер текста на кнопках */
+        padding: 3px 5px;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .editor {
+        max-width: 80%; /* Ограничиваем ширину для планшетов */
+        padding: 15px;
+    }
+
+    .menu {
+        gap: 8px; /* Чуть больше расстояние между кнопками */
+    }
+
+    .profile-photo {
+        width: 90px; /* Умеренно уменьшаем фото */
+        height: 90px;
+    }
+}
+
+/* Для больших экранов (десктопы) */
+@media (min-width: 1025px) {
+    .editor {
+        max-width: 600px; /* Оставляем исходные настройки */
+        padding: 16px;
+    }
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2b2b2b;
+    color: #dcdcdc;
+}
+
+.container {
+    display: flex; /* или grid */
+    flex-direction: column; /* Убедитесь, что элементы выстраиваются в столбик */
+    align-items: center; /* Это поможет центрировать элементы */
+}
+
+/* Стиль для подложки */
+.editor {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    padding: 16px;
+    overflow: auto;
+    position: relative;
+}
+
+/* Панель инструментов */
+.toolbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toolbar .btn {
+    width: 12px; /* Уменьшить размер кнопок */
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Цвет кнопок в основной панели инструментов */
+.toolbar .btn.red {
+    background-color: #ff5f56;
+}
+
+.toolbar .btn.yellow {
+    background-color: #ffbd2e;
+}
+
+.toolbar .btn.green {
+    background-color: #27c93f;
+}
+
+.toolbar .title {
+    color: #c5c5c5;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+/* Стили для меню и кнопок */
+.menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #c5c5c5;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #333;
+}
+
+.menu-btn.active {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Стиль для секций с кодом */
+.code-section {
+    display: none;
+}
+
+.code-section.active {
+    display: block;
+}
+
+.code {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    font-size: 16px;
+}
+
+/* Стили для различных частей кода */
+.function {
+    color: #c586c0;
+}
+
+.method {
+    color: #4ec9b0;
+}
+
+.var {
+    color: #569cd6;
+}
+
+.value {
+    color: #ce9178;
+}
+
+/* Стили для ссылок в коде */
+.code a {
+    color: #ce9178;
+    text-decoration: none;
+}
+
+.code a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для кнопки внутри кода */
+.button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ce9178;
+    border-radius: 4px;
+    color: #ce9178;
+    background-color: #1e1e1e;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* По умолчанию модальное окно скрыто */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для содержимого модального окна */
+.modal-content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    color: #dcdcdc;
+    position: relative;
+}
+
+/* Стили для панели инструментов в модальном окне */
+.modal-content .toolbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопок в панели инструментов модального окна */
+.modal-content .toolbar .btn {
+    width: 12px; /* Установите одинаковый размер для всех кнопок */
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.modal-content .toolbar .btn.red {
+    background-color: #ff5f56;
+}
+
+.modal-content .toolbar .btn.yellow {
+    background-color: #ffbd2e;
+}
+
+.modal-content .toolbar .btn.green {
+    background-color: #27c93f;
+}
+
+.modal-content .toolbar .title {
+    color: #c5c5c5;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+#modal-close {
+    background-color: #ff5f56;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#modal-close:hover {
+    background-color: #ff3b3b;
+}
+
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина полосы прокрутки */
+    height: 12px; /* Высота горизонтальной полосы прокрутки */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Цвет ползунка полосы прокрутки */
+    border-radius: 6px; /* Скругление углов ползунка */
+    border: 3px solid #333; /* Цвет фона вокруг ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Цвет ползунка при наведении */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1e1e1e; /* Цвет трека (фона) полосы прокрутки */
+    border-radius: 6px; /* Скругление углов трека */
+}
+
+/* Горизонтальная полоса прокрутки */
+::-webkit-scrollbar-horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #555;
+    border-radius: 6px;
+    border: 3px solid #333;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-color: #1e1e1e;
+    border-radius: 6px;
+}
+
+/* Контейнер для фото */
+.profile-container {
+    text-align: center; /* Центрируем фото */
+    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от секции с кодом */
+    position: relative; /* Для позиционирования псевдоэлементов */
+}
+
+/* Стили для круглого фото с волнистым эффектом */
+.profile-photo {
+    width: 100px; /* Ширина фото */
+    height: 100px; /* Высота фото */
+    border-radius: 50%; /* Делает фото круглым */
+    object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
+    border: 3px solid #f19d2f; /* Обводка вокруг фото */
+    position: relative; /* Для позиционирования псевдоэлементов */
+    overflow: hidden; /* Обрезка выходящего за пределы фото содержимого */
+    animation: wave 5s infinite; /* Анимация волнистого эффекта */
+}
+
+.code-section {
+    background-color: #1e1e1e; /* Темный фон */
+    color: #dcdcdc; /* Светлый цвет текста */
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт для кода */
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.code-section .code {
+    white-space: pre-wrap; /* Для корректного отображения длинных строк */
+    word-wrap: break-word;
+}
+
+.code-section .keyword {
+    color: #569cd6; /* Цвет для ключевых слов (например, function) */
+}
+
+.code-section .string {
+    color: #ce9178; /* Цвет для строк (например, текст внутри кавычек) */
+}
+
+.code-section .function-name {
+    color: #dcdcaa; /* Цвет для названий функций */
+}
